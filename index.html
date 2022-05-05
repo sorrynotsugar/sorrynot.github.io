@@ -1,36 +1,55 @@
 <!DOCTYPE html>
- <html>
- <head>
-   <meta charset="UTF-8">
-   <link rel="stylesheet" href="./style.css">
+<html>
+  <head lang="en">
+    <meta charset="UTF-8">
+    <title>Eliza K / Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/icon-bit.png">
+  </head>
+  <body>
+    <section class="main">
+      <div class="content">
+        <div class="avatar">
+          <img class="avatar-icon" src="images/avatar.jpeg" alt="avatar" />
+          <div class="contacts">
+            <a href="https://github.com/sorrynotsugar"><i class="fa fa-github"></i></a>
+          </div>
+        </div>
+        <div class="description">
+          <h1>Hi! I’m <span class="colored">Eliza K</span></h1>
+          <div class="numbers">
+            <div class="numbers-item">
+              <span class="infoNumbers" id="ye">21</span>
+              <span>years old, Kazan</span>
+            </div>
+            <div class="numbers-item">
+              <span class="infoNumbers" id="it">&gt;0</span>
+              <span>years of software development</span>
+            </div>
+            <div class="numbers-item">
+              <span class="infoNumbers" id="he">1</span>
+              <span>seconds you are here</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <p>Eliza K © 2022-2023</p>
+    </footer>
 
- </head>
- <body>
- <!-- partial:index.partial.html -->
- <div id="container">
-         <div id="container-bg">
-             <div class="bg black"></div>
-             <div class="bg white"></div>
-         </div>
-         <div id="c-container">
-             <div id="ideas">
-                 <div class="idea">
-                     <div id="idea-text-left" class="idea-text">Мой</div>
-                 </div>
-                 <div class="idea">
-                     <div id="idea-text-right" class="idea-text">Сайт</div>
-                 </div>
-             </div>
-             <canvas id="c">Извините.</canvas>
-         </div>
+    <script>
+      document.getElementById('ye').innerText = (+new Date().getFullYear() - 2000).toString();
+      document.getElementById('it').innerText = '>' + (+new Date().getFullYear() - 2020 - 1).toString();
+     /*  document.getElementById('cy').innerText = new Date().getFullYear().toString(); */
 
-     </div>
-<!--  <!-- partial -->
-   <script src='TimelineMax.min.js'></script>
- <script src='TweenMax.min.js'></script>
- <script src='jquery-2.2.4.js'></script>
- <script src='browser.min.js'></script>
- <script src='imagesloaded.pkgd.min.js'></script><script  src="./script.js"></script> -->
-
- </body>
- </html>
+      const start = Date.now();
+      setInterval(function() {
+        const delta = Date.now() - start; 
+        document.getElementById('he').innerText = Math.floor(delta / 1000); 
+      }, 1000);
+    </script>
+  </body>
+</html>
